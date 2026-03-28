@@ -1,0 +1,3 @@
+/home/ariwish/trying_cpp/CMakeFiles/main.dir
+/home/ariwish/trying_cpp/CMakeFiles/edit_cache.dir
+/home/ariwish/trying_cpp/CMakeFiles/rebuild_cache.dir
