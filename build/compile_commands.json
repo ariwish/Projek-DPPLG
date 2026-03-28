@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/ariwish/trying_cpp/build",
-  "command": "/usr/bin/c++   -std=gnu++23 -o CMakeFiles/main.dir/main.cpp.o -c /home/ariwish/trying_cpp/main.cpp",
-  "file": "/home/ariwish/trying_cpp/main.cpp",
-  "output": "CMakeFiles/main.dir/main.cpp.o"
-}
-]
