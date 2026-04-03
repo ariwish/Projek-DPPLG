@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Do not ignore directories (required to find files inside folders)
+!*/
+
+# Allow main.cpp
+!main.cpp
+!README.md
+!.gitignore
