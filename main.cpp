@@ -1,3 +1,10 @@
+/*
+ * TO FIX:
+ * sign up dengan username admin (no warning/apapun)
+ *
+ */
+
+
 #include <algorithm>
 #include <iomanip>
 #include <iostream>
@@ -79,6 +86,7 @@ int menuAkhir(bool adaUlang) {
 
 // Login
 bool login() {
+    clearScreen();
     int attempt = 0;
     while (attempt < 3) {
         cout << "\n";
@@ -88,9 +96,9 @@ bool login() {
 
         string username, password;
 
-        cout << ORANGE "Username : " RESET;
+        cout << "Username : ";
         getline(cin, username);
-        cout << ORANGE "Password : " RESET;
+        cout <<  "Password : " ;
         getline(cin, password);
 
         if (username.empty() || password.empty()) {
@@ -100,7 +108,7 @@ bool login() {
         }
         if (akun.count(username) && akun[username] == password) {
             currentUser = username;
-            cout << HIJAU "\n!V! Login berhasil! Selamat datang, " << ORANGE << currentUser << RESET "\n";
+            cout << HIJAU "\n!V! Login berhasil! Selamat datang, " << currentUser << "\n";
             return true;
         }
         attempt++;
@@ -112,15 +120,16 @@ bool login() {
 
 // Sign Up
 void signup() {
+    clearScreen();
     cout << endl;
     garis();
     cout << PUTIH TEBAL "\t\t\t       SIGN UP\n" RESET;
     garis();
 
     string usernameIn, passwordIn;
-    cout << ORANGE "Buat Username : " RESET;
+    cout << "Buat Username : ";
     getline(cin, usernameIn);
-    cout << ORANGE "Buat Password : " RESET;
+    cout << "Buat Password : ";
     getline(cin, passwordIn);
 
     if (usernameIn.empty() || passwordIn.empty()) {
@@ -139,6 +148,7 @@ void signup() {
 void searchMP(vector<string>& hari, vector<vector<string>>& mapel,
               vector<vector<string>>& guru,  vector<vector<string>>& jam,
               vector<vector<string>>& note) {
+    clearScreen();
     int pilih;
     while (true) {
         garis();
@@ -146,7 +156,7 @@ void searchMP(vector<string>& hari, vector<vector<string>>& mapel,
         garis();
         cout << "1. " UNGU "Home\n" RESET
              << "2. " HIJAU "Lanjut\n" RESET;
-        cout << ORANGE "Pilih: " RESET;
+        cout <<  "Pilih: ";
         cin >> pilih;
         if (cin.fail()) {
             cin.clear();
@@ -212,7 +222,7 @@ void searchMP(vector<string>& hari, vector<vector<string>>& mapel,
 void tambahMP(vector<string>& hari, vector<vector<string>>& mapel,
               vector<vector<string>>& guru,  vector<vector<string>>& jam,
               vector<vector<string>>& note) {
-
+    clearScreen();
     int pilih;
     while (true) {
         garis();
@@ -301,7 +311,7 @@ void tambahMP(vector<string>& hari, vector<vector<string>>& mapel,
 void hapusMP(vector<string>& hari, vector<vector<string>>& mapel,
              vector<vector<string>>& guru,  vector<vector<string>>& jam,
              vector<vector<string>>& note) {
-
+    clearScreen();
     int pilih;
     while (true) {
         garis();
@@ -410,6 +420,7 @@ void hapusMP(vector<string>& hari, vector<vector<string>>& mapel,
 void showjadwal(vector<string>& hari, vector<vector<string>>& mapel,
                 vector<vector<string>>& guru,  vector<vector<string>>& jam,
                 vector<vector<string>>& note) {
+    clearScreen();
     garis();
     cout << TEBAL PUTIH "\t\t\tJADWAL MINGGU INI\n" RESET;
     garis();
@@ -468,6 +479,7 @@ int main() {
     bool loggedIn = false;
 
     do {
+        clearScreen();
         cout << "\n";
         garis();
         cout << PUTIH TEBAL "\t\t  SMK TI BALI GLOBAL JAYA SAMPURNA\n" RESET;
@@ -477,7 +489,7 @@ int main() {
              << "2. " HIJAU "Sign Up\n" RESET
              << "3. " MERAH "Exit\n" RESET;
         garis();
-        cout << ORANGE "Pilih menu : " RESET;
+        cout <<  "Pilih menu : ";
         cin >> choice;
 
         if (cin.fail()) {
@@ -505,17 +517,18 @@ int main() {
 
     // MENU HOME
     while (loggedIn) {
+        clearScreen();
         garis();
         cout << TEBAL "\t\t\t   MENU HOME\n" RESET;
         garis();
 
-        cout << "Selamat datang, " << ORANGE TEBAL << currentUser << RESET "\n";
+        cout << "Selamat datang, " << currentUser << "\n";
         cout << "1. " BIRU  "Cari Jadwal\n" RESET
              << "2. " HIJAU "Tambah Jadwal\n" RESET
              << "3. " MERAH "Hapus Jadwal\n" RESET
              << "4. " UNGU  "Show Jadwal\n" RESET
              << "5. " MERAH "Exit\n" RESET;
-        cout << ORANGE "Masukkan pilihan anda : " RESET;
+        cout << "Masukkan pilihan anda : ";
         cin >> choice;
 
         if (cin.fail()) {
